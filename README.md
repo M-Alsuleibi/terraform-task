@@ -38,28 +38,28 @@ terraform apply
 ## Deliverables
 
 ###  AWS S3 backend bucket showing five distinct .tfstate files.
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
-![alt text](image-5.png)
+![alt text](screenshots/image-2.png)
+![alt text](screenshots/image-3.png)
+![alt text](screenshots/image-4.png)
+![alt text](screenshots/image-5.png)
 ---
 ###  Deployment S3 Bucket — launch.sh Uploaded
-![alt text](image-12.png)
+![alt text](screenshots/image-12.png)
 ---
 ### EC2 Metadata - Dev VPC:
-![alt text](image.png)
+![alt text](screenshots/image.png)
 
 ### EC2 Metadata - Prod VPC:
-![alt text](image-1.png)
+![alt text](screenshots/image-1.png)
 ---
-![alt text](image-6.png)
-![alt text](image-7.png)
+![alt text](screenshots/image-6.png)
+![alt text](screenshots/image-7.png)
 
 ### ssh to dev-instance:
-![alt text](image-8.png)
+![alt text](screenshots/image-8.png)
 ### ssh to prod-instance
-![alt text](image-9.png)
+![alt text](screenshots/image-9.png)
 ---
 ### Verification that the EC2 User Data successfully downloaded the script from S3
 
-![alt text](image-11.png)
+![alt text](screenshots/image-11.png)
