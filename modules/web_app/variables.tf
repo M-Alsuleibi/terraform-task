@@ -1,8 +1,3 @@
-variable "environment" {
-  description = "Deployment environment (dev or prod)"
-  type        = string
-}
-
 variable "project_name" {
   description = "Project name prefix used for resource naming"
   type        = string
@@ -51,6 +46,16 @@ variable "instance_type" {
   validation {
     condition     = can(regex("^(t2|t3|t3a|t4g|m5|m6i|m6g|c5|c6i|c6g)\\.", var.instance_type))
     error_message = "Instance type must be a supported type (t2, t3, t3a, t4g, m5, m6i, m6g, c5, c6i, c6g)."
+  }
+}
+variable "arch" {
+  description = "AMI architecture — x86_64 or arm64"
+  type        = string
+  default     = "x86_64"
+
+  validation {
+    condition     = contains(["x86_64", "arm64"], var.arch)
+    error_message = "arch must be either 'x86_64' or 'arm64'."
   }
 }
 

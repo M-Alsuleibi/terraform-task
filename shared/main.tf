@@ -30,7 +30,7 @@ resource "aws_iam_policy" "s3_deployment_read" {
     Version = "2012-10-17"
     Statement = [
       {
-        Sid    = "Allow S3DeploymentAcces"
+        Sid    = "AllowS3DeploymentAcces"
         Effect = "Allow"
         Action = [
           "s3:GetObject",
