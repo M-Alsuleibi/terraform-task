@@ -2,7 +2,7 @@ module "web_app" {
   source = "../../modules/web_app"
 
   environment   = "dev"
-  project_name  = "terraform"
+  project_name  = "alsuleibi"
   vpc_id        = local.vpc_id
   subnet_id     = local.subnet_id
   my_ip         = local.my_ip
@@ -11,4 +11,7 @@ module "web_app" {
   policy_arn    = local.iam_policy_arn
   key_name      = local.key_pair_name
   instance_type = "t2.micro"
+  tags = {
+    Environment = "dev"
+  }
 }

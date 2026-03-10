@@ -4,12 +4,12 @@ data "aws_ami" "amazon_linux" {
 
   filter {
     name   = "name"
-    values = ["al2023-ami-*-x86_64"]
+    values = ["al2023-ami-*-${local.arch}"]
   }
 
   filter {
     name   = "architecture"
-    values = ["x86_64"]
+    values = [local.arch]
   }
 
   filter {

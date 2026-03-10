@@ -1,5 +1,5 @@
 terraform {
-    required_version = ">= 1.6.0"
+  required_version = ">= 1.6.0"
 
   required_providers {
     aws = {
@@ -11,4 +11,10 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
+
+  default_tags {
+    tags = {
+      ManagedBy = "M-Alsuleibi/terraform-task"
+    }
+  }
 }

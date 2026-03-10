@@ -27,10 +27,7 @@ resource "aws_security_group" "web" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = {
-    Name        = "${var.project_name}-${var.environment}-web-sg"
-    Environment = var.environment
-  }
+  tags = var.tags
 }
 
 resource "aws_iam_role" "ec2" {
@@ -48,10 +45,8 @@ resource "aws_iam_role" "ec2" {
     ]
   })
 
-  tags = {
-    Name        = "${var.project_name}-${var.environment}-ec2-role"
-    Environment = var.environment
-  }
+  tags = var.tags
+
 }
 
 # Permission policy(S3 read)
@@ -87,8 +82,6 @@ resource "aws_instance" "web" {
     script_key  = var.s3_script_key
   })
 
-  tags = {
-    Name        = "${var.project_name}-${var.environment}-web"
-    Environment = var.environment
-  }
+  tags = var.tags
+
 }

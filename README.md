@@ -15,7 +15,7 @@ terraform output -raw private_key_pem > ~/.ssh/terraform-deployer.pem
 chmod 400 ~/.ssh/terraform-deployer.pem
 
 # 2. Networking
-cd ../../dev/network/
+cd ../dev/network/
 terraform init
 terraform apply
 

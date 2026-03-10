@@ -47,4 +47,15 @@ variable "instance_type" {
   description = "EC2 instance type"
   type        = string
   default     = "t2.micro"
+
+  validation {
+    condition     = can(regex("^(t2|t3|t3a|t4g|m5|m6i|m6g|c5|c6i|c6g)\\.", var.instance_type))
+    error_message = "Instance type must be a supported type (t2, t3, t3a, t4g, m5, m6i, m6g, c5, c6i, c6g)."
+  }
+}
+
+variable "tags" {
+  description = "Tags to apply to all resources"
+  type        = map(string)
+  default     = {}
 }
